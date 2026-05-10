@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  body {
+    @apply m-0 font-sans antialiased bg-slate-950 text-slate-200;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme(--color-slate-700) transparent;
+  }
+}
+
+/* Markdown preview - nested element styles that can't use utility classes */
+@layer components {
+  .markdown-preview h1,
+  .markdown-preview h2,
+  .markdown-preview h3,
+  .markdown-preview h4 {
+    @apply text-slate-100 font-semibold tracking-tight;
+    margin: 1.5em 0 0.5em;
+  }
+
+  .markdown-preview h1 {
+    @apply text-3xl;
+  }
+  .markdown-preview h2 {
+    @apply text-xl;
+  }
+  .markdown-preview h3 {
+    @apply text-lg;
+  }
+
+  .markdown-preview p {
+    margin: 0.75em 0;
+  }
+
+  .markdown-preview code {
+    @apply bg-slate-900/80 rounded-md px-1.5 py-0.5 text-[0.85em] font-mono text-blue-300;
+  }
+
+  .markdown-preview pre {
+    @apply bg-slate-900/80 rounded-xl p-4 overflow-x-auto border border-slate-700/50;
+  }
+
+  .markdown-preview pre code {
+    @apply bg-transparent p-0 text-slate-200;
+  }
+
+  .markdown-preview ul,
+  .markdown-preview ol {
+    @apply pl-6;
+  }
+
+  .markdown-preview li {
+    margin: 0.25em 0;
+  }
+
+  .markdown-preview blockquote {
+    @apply border-l-[3px] border-blue-500/60 text-slate-400 rounded-r-lg bg-blue-500/5;
+    margin: 1em 0;
+    padding: 0.75em 1em;
+  }
+
+  .markdown-preview table {
+    @apply w-full border-collapse;
+    margin: 1em 0;
+  }
+
+  .markdown-preview th,
+  .markdown-preview td {
+    @apply border border-slate-700/50 px-3 py-2 text-left;
+  }
+
+  .markdown-preview th {
+    @apply bg-slate-900/50 text-slate-100 font-semibold text-sm;
+  }
+
+  .markdown-preview a {
+    @apply text-blue-400 hover:text-blue-300 transition-colors;
+  }
+
+  .markdown-preview hr {
+    @apply border-slate-700/50 my-6;
+  }
+}
